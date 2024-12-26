@@ -1,11 +1,14 @@
 import express from 'express';
 const app = express();
 import dotenv from "dotenv";
+import connectDB from './db/index.js';
 import users from "./routes/users.js";
 
 // Middleware to parse JSON request bodies
 
 app.use(express.json());
+
+connectDB(); // connect to MongoDB
 
 dotenv.config() // config .env.local file
 

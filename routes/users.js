@@ -1,13 +1,9 @@
 import express from 'express';
+import { createUser } from '../controllers/createUser.js';
 const router = express.Router();
 
-router.post('/create', (req, res) => {
-    try {
-        res.send("Hello World");
-    } catch (error) {
-        return res.status(500).json({"message":"Internal Server Error", "success": false});
-    }
-})
+// Route to create user
+router.post('/create', createUser)
 
 
 
