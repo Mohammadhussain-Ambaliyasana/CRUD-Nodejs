@@ -3,10 +3,13 @@ const app = express();
 import dotenv from "dotenv";
 import connectDB from './db/index.js';
 import users from "./routes/users.js";
+import cors from "cors";
 
 // Middleware to parse JSON request bodies
 
 app.use(express.json());
+
+app.use(cors());
 
 connectDB(); // connect to MongoDB
 
