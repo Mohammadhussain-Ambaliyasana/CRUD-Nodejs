@@ -25,7 +25,7 @@ export const updateUser = async (req, res) => {
         }
 
         const update = await User.findByIdAndUpdate(id, {$set:{name, email, phone, password}}, {new:true});
-        console.log({update});
+        
         if(!update){
             return res.status(500).json({"message":"User not updated","success":false});
         }
