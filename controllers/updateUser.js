@@ -1,8 +1,20 @@
 import User from "../models/users.js";
+import Yup from "Yup";
+
+const userSchema = Yup.object().shape({
+
+    name:Yup.string().required("Name is required!"),
+    email:Yup.string().email("Enter valid Email!").required("Email is required!"),
+    phone:Yup.string().matches(/^\d{10}$/, "Mobile number must be exactly 10 digits!").required("Phone Number is required!"),
+    password:Yup.string().matches(/^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z0-9!@#$%^&*(),.?":{}|<>]{8}$/, "Use 8 characters and special characters").required("Password Is required!")
+
+});
 
 export const updateUser = async (req, res) => {
     try {
         
+        await userSchema.validate(req.body, {abortEarly:false});
+
         const id = req.params.id;
 
         const {name, email, phone, password} = req.body;
