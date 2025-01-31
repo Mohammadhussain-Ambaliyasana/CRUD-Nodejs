@@ -43,11 +43,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-const DataTable = () => {
+const DataTable = ({showAlt}) => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Fetching data Function Start
+  // Fetching data Function Start
   const fetchAllData = async () => {
     setLoading(true);
     const requestOptions = {
@@ -68,6 +70,8 @@ const DataTable = () => {
       setLoading(false);
     }
   }
+  // Fetching data Function Ends
+
   useEffect( () => {
     fetchAllData();
   },[])
@@ -75,8 +79,8 @@ const DataTable = () => {
   return (
     <>
       <div className="container">
-        <AddBtn/>
-
+        <AddBtn showAlt={showAlt}/>
+        
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 700 }} aria-label="customized table" className="dataTable">
             <TableHead>

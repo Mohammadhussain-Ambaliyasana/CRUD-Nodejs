@@ -1,14 +1,14 @@
 // material UI imports start
 import Button from '@mui/material/Button';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // material UI imports end
 
-const AddBtn = () => {
+const AddBtn = ({showAlt}) => {
 
     const [click, setClick] = useState(0);
 
     const btnClicked = () => {
-        setClick(click+1);
+        showAlt("This button is clicked", "success");
     }
 
   return (
