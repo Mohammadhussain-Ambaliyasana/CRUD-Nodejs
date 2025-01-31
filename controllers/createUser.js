@@ -1,5 +1,5 @@
 import User from '../models/users.js';
-import Yup from "Yup";
+import * as Yup from "yup";
 
 const userSchema = Yup.object().shape({
 
