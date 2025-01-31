@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    background-color: #0f1214;
+    color: #90caf9;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: auto;
+    width: 80%;
+}
+
+.addBtn{
+    float: right;
+    margin: 10px !important;
+}
+
+.loading{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.dataTable{
+    border: 2px solid #90caf9;
+    background-color: #0f1214;
+    color: #90caf9;
+}
+
+.MuiTableCell-root{
+    color: #90caf9 !important;
+}
